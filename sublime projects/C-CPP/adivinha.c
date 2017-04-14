@@ -2,10 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include <string.h>
 #include <unistd.h>
 #include <ctype.h>
 #include <math.h>
+#include <conio.h>
+
 int n[10], i;
 
 int mag(int x, int y){
@@ -44,11 +45,9 @@ int main ()
 	char par,um,ini;
 
 	printf("\n\t:::::.   :::::::  :::   ::  .:::::  :::::::\n\t::   ::  ::       ::::  ::  ::      ::\n\t::   ::  :::::::  :: :: ::  .:::::  :::::::\n\t:::::.   ::       ::  ::::      ::  ::\n\t::       :::::::  ::   :::  :::::.  :::::::\n\t::\n");
-	usleep(5000000);
-	printf("\n\t:::::::  :::       :::\n\t::       ::::     ::::\n\t:::::::  :: ::   :: ::\n\t::       ::  :: ::  ::\n\t:::::::  ::   :::   ::\n");
-	usleep(5000000);
+	printf("\n\t        :::::::  :::       :::\n\t        ::       ::::     ::::\n\t        :::::::  :: ::   :: ::\n\t        ::       ::  :: ::  ::\n\t        :::::::  ::   :::   ::\n");
 	printf("\n\t::     ::  :::       :::  	:::   ::  O\n\t::     ::  ::::     ::::  	::::  :: ---\n\t::     ::  :: ::   :: ::  	:: :: ::\n\t::     ::  ::  :: ::  ::  	::  ::::\n\t*:::::::*  ::   :::   ::  	::   :::\n");
-	sleep(4);
+	
 	system("pause");
 	system("cls");
 
@@ -57,7 +56,8 @@ int main ()
 	pergunta:
 	system("cls");
 	printf("ESSE NÚMERO É PAR?\nS = SIM\nN = NÃO\n");
-	scanf("%c",&par);
+	fflush(stdin);
+	par=getch();
 	par=toupper(par);
 
 	switch(par){
@@ -94,6 +94,8 @@ int main ()
 
 		default:
 		printf("\tERRO!\n\tDIGITE APENAS S OU N");
+		sleep(3);
+		system("cls");
 		goto pergunta;
 	}
 
@@ -101,7 +103,7 @@ int main ()
 	system("cls");
 	printf("O RESULTADO DESSA DIVISÃO FOI 1?\nS = SIM\nN = NÃO\n");
 	fflush(stdin);
-	scanf("%c",&um);
+	um=getch();
 	um=toupper(um);
 
 	switch(um){
@@ -110,7 +112,7 @@ int main ()
 		printf("\tO SEU NÚMERO É");
 		for (i = 0; i < 3; ++i)
 		{
-			printf(".");
+			printf(". ");
 			usleep(800000);
 		}
 		printf(" %d\n",mag(k,l));
@@ -118,7 +120,7 @@ int main ()
 		pergunta3:
 		printf("\n\n\tDESEJA REFAZER O TESTE?\nS = SIM\nN = NÃO\n");
 		fflush(stdin);
-		scanf("%c",&ini);
+		ini=getch();
 		ini = toupper(ini);
 		if (ini=='S')
 		{
@@ -131,6 +133,7 @@ int main ()
 		}
 		else{
 			printf("\tERRO!\n\tDIGITE APENAS S OU N");
+			sleep(3);
 			system("cls");
 			goto pergunta3;
 		}
@@ -142,6 +145,8 @@ int main ()
 
 		default:
 		printf("\tERRO!\n\tDIGITE APENAS S OU N");
+		sleep(3);
+		system("cls");
 		goto pergunta2;
 
 	}
