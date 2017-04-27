@@ -1,4 +1,3 @@
-//autor: Rafael Trindade
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -7,13 +6,13 @@
 #include <math.h>
 #include <conio.h>
 
-int n[10], i;
+int n[10];
 
-int mag(int x, int y){
-	int a=0,b=0;
-	if (y==0)
+int descobre(int par, int impar){
+	int a=0, b=0, i;
+	if (impar==0)
 	{
-		return pow(2,x);
+		return pow(2,par);
 	}
 	else{
 		for (i = 0; i < 10; i++)
@@ -24,26 +23,20 @@ int mag(int x, int y){
 				b+=pow(2,i);
 			}
 		}
-		a=pow(2,(x+y));
+		
+		a=pow(2,(par+impar));
+		
 		return (a+b);
 	}
 }
-/*
-:::::.   :::::::  :::   ::  .:::::  :::::::       :::::::  :::       :::        ::     ::  :::       :::  	:::   ::  O
-::   ::  ::       ::::  ::  ::      ::            ::       ::::     ::::		::	   ::  ::::     ::::  	::::  :: ---
-::   ::  :::::::  :: :: ::  .:::::  :::::::       :::::::  :: ::   :: ::		::     ::  :: ::   :: ::  	:: :: ::
-:::::.   ::       ::  ::::      ::  ::            ::       ::  :: ::  ::		::	   ::  ::  :: ::  ::  	::  ::::
-::       :::::::  ::   :::  :::::.  :::::::       :::::::  ::   :::   ::		*:::::::*  ::   :::   ::  	::   :::
-::
-*/
-int main ()
-{
-	inicio:
+
+int main(){
 	setlocale(LC_ALL,"portuguese");
-
-	int j, k=0, l=0, m=0;
-	char par,um,ini;
-
+	
+	inicio:	
+	int j, i, par=0, impar=0, m=0;
+	char opcao;
+	
 	printf("\n\t:::::.   :::::::  :::   ::  .:::::  :::::::\n\t::   ::  ::       ::::  ::  ::      ::\n\t::   ::  :::::::  :: :: ::  .:::::  :::::::\n\t:::::.   ::       ::  ::::      ::  ::\n\t::       :::::::  ::   :::  :::::.  :::::::\n\t::\n");
 	printf("\n\t        :::::::  :::       :::\n\t        ::       ::::     ::::\n\t        :::::::  :: ::   :: ::\n\t        ::       ::  :: ::  ::\n\t        :::::::  ::   :::   ::\n");
 	printf("\n\t::     ::  :::       :::  	:::   ::  O\n\t::     ::  ::::     ::::  	::::  :: ---\n\t::     ::  :: ::   :: ::  	:: :: ::\n\t::     ::  ::  :: ::  ::  	::  ::::\n\t*:::::::*  ::   :::   ::  	::   :::\n");
@@ -52,15 +45,16 @@ int main ()
 	system("cls");
 
 	printf("\tSERÁ QUE EU CONSIGO ADIVINHAR EM QUAL NÚMERO VC ESTÁ PENSANDO?\n");
-	sleep(3);
-	pergunta:
+	sleep(2);
 	system("cls");
+	
+	pergunta:
 	printf("ESSE NÚMERO É PAR?\nS = SIM\nN = NÃO\n");
 	fflush(stdin);
-	par=getch();
-	par=toupper(par);
-
-	switch(par){
+	opcao=getch();
+	opcao=toupper(opcao);
+	
+	switch(opcao){
 		case 'S':
 
 		for (j = 0; j < 3; ++j)
@@ -72,7 +66,7 @@ int main ()
 				printf("   * ");
 				usleep(200000);
 			}
-		}k++;
+		}par++;  // k
 		n[m]=1;
 		m++;
 		break;
@@ -87,7 +81,7 @@ int main ()
 				printf("   * ");
 				usleep(200000);
 			}
-		}l++;
+		}impar++; // l
 		n[m]=2;
 		m++;
 		break;
@@ -98,16 +92,18 @@ int main ()
 		system("cls");
 		goto pergunta;
 	}
-
+	
 	pergunta2:
 	system("cls");
 	printf("O RESULTADO DESSA DIVISÃO FOI 1?\nS = SIM\nN = NÃO\n");
 	fflush(stdin);
-	um=getch();
-	um=toupper(um);
-
-	switch(um){
+	opcao=getch();
+	opcao=toupper(opcao);
+	
+	
+	switch(opcao){
 		case 'S':
+			
 		system("cls");
 		printf("\tO SEU NÚMERO É");
 		for (i = 0; i < 3; ++i)
@@ -115,19 +111,21 @@ int main ()
 			printf(". ");
 			usleep(800000);
 		}
-		printf(" %d\n",mag(k,l));
+		printf(" %d\n",descobre(par,impar));
 		system("pause");
+		
+		
 		pergunta3:
 		printf("\n\n\tDESEJA REFAZER O TESTE?\nS = SIM\nN = NÃO\n");
 		fflush(stdin);
-		ini=getch();
-		ini = toupper(ini);
-		if (ini=='S')
+		opcao = getch();
+		opcao = toupper(opcao);
+		if (opcao=='S')
 		{
 			system("cls");
 			goto inicio;
 		}
-		else if (ini=='N')
+		else if (opcao=='N')
 		{
 			exit(0);
 		}
@@ -138,6 +136,7 @@ int main ()
 			goto pergunta3;
 		}
 		break;
+		
 
 		case 'N':
 		goto pergunta;
@@ -150,8 +149,11 @@ int main ()
 		goto pergunta2;
 
 	}
-
-	return 0;
+	
+	
+	
+	
+	
+	
+	
 }
-
-
