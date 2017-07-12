@@ -5,6 +5,8 @@
 #include "adivinha.h"
 int pot(int a, int b){
 	if (b==0)
+		return 1;
+	if (b==1)
 		return a;
 	int c=0;
 	for (int i = 1; i < b; i++)
@@ -19,7 +21,7 @@ int magica(int par, int impar, int* posicao, int n){
 	else{
 		for (i = 0; i < n; i++)
 		{
-			if (*(posicao+=(i*sizeof(int)))==1)
+			if (*(posicao+i)==1)
 				b+=pot(2,i); //impar
 		}
 		a=pot(2,(par+impar));

@@ -4,8 +4,8 @@ int main(int argc, char const *argv[])
 {
 	apresenta();
 	char ehpar, ehum, par=0, impar=0, tot=0, refazer;
-	int posicao[14], n=0;
-	for (int i = 0; i < 14; i++)
+	int posicao[20], n=0;
+	for (int i = 0; i < 20; i++)
 		posicao[i]=0;
 	int* pv = posicao;
 	cab();
@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 		}
 		else if (ehpar=='N'){
 			impar++;
-			*(pv+=(sizeof(int)))=1;
+			*(pv+n)=1;
 			n++;
 			printf("\tSUBTRAIA 1 E DIVIDA ESSE NÚMERO POR 2\n");
 		}
@@ -42,14 +42,16 @@ int main(int argc, char const *argv[])
 			printf("O NÚMENO NO QUAL VC PENSOU FOI %d\n",magica(par,impar,pv,n));
 			sleep(1);
 			tot=0;
-			for (int i = 0; i < n; i++)
+			for (int i = 0; i <= n; i++)
 				posicao[i]=0;
 			n=0;
+			par=0;
+			impar=0;
+			printf("DESEJA REFAZER O TESTE?\nS/N\n");
+			getchar();
+			scanf("%c",&refazer);
+			refazer=toupper(refazer);
 		}
-	}
-	printf("DESEJA REFAZER O TESTE?\nS/N\n");
-	getchar();
-	scanf("%c",&refazer);
-	refazer=toupper(refazer);		
+	}		
 	return 0;
 }
