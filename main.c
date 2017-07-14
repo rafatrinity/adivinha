@@ -5,8 +5,6 @@ int main(int argc, char const *argv[])
 	apresenta();
 	char ehpar, ehum, par=0, impar=0, tot=0, refazer;
 	int posicao[20], n=0;
-	for (int i = 0; i < 20; i++)
-		posicao[i]=0;
 	int* pv = posicao;
 	cab();
 	printf("\t\nPENSE EM UM NÚMERO MAIOR QUE 1\n");
@@ -52,6 +50,7 @@ int main(int argc, char const *argv[])
 			scanf("%c",&refazer);
 			refazer=toupper(refazer);
 		}
-	}		
+	}	
+	fim();	
 	return 0;
 }
