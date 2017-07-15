@@ -14,6 +14,7 @@
  */
 
 void linha();
+
 char SISTEMA;
 char apresenta(){
 	printf("\n\n");
@@ -22,7 +23,7 @@ char apresenta(){
 	printf("\t\t\t::  ::  ::      ::::::  ||\n");
 	printf("\t\t\t*::::*  ::::::  ::  ::  ::\n\n");
 	printf("\n\n");
-	sleep(1);
+	usleep(500000);
 	printf("\tPOR GENTILEZA, INFORME QUAL SISTEMA OPERACIONAL VC UTILIZA:\n\n\tD=DOS\n\tU=UNIX\n\n");
 	printf("\t\tDUVIDAS? DIGITE (i) PARA MAIS INFORMAÇÕES\n");
 	printf("\t"); 
