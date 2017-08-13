@@ -10,7 +10,7 @@ curso: ciências da computação.
 professor: Antonio P Bezerra.
 
 ## objetivo do programa:  :trollface:
-'adivinhar' em qual numero a pessoa está pensando fazendo 3 interações...
+'adivinhar' em qual numero a pessoa está pensando fazendo 2 interações...
 
 * **esse número é par?**
 	* (sim)
