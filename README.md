@@ -12,13 +12,14 @@ professor: Antonio P Bezerra.
 ## objetivo do programa:  :trollface:
 'adivinhar' em qual numero a pessoa está pensando fazendo 3 interações...
 
-* esse número é par?
-* (sim)
-	* divida esse numero por 2.
-* (não)
-	* subtraia 1 e divida esse numero por 2.
-* o resultado da divisão foi 1?
-* (sim)
-	* fim do programa
-* (não)
-	* repete
+* **esse número é par?**
+	* (sim)
+		* divida esse numero por 2.
+	* (não)
+		* subtraia 1 e divida esse numero por 2.
+		
+* **o resultado da divisão foi 1?**
+	* (sim)
+		* fim do programa
+	* (não)
+		* repete
