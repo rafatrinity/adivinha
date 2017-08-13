@@ -18,7 +18,7 @@ professor: Antonio P Bezerra.
 * (não)
 	* subtraia 1 e divida esse numero por 2.
 * o resultado da divisão foi 1?
-*(sim)
+* (sim)
 	* fim do programa
-*(não)
+* (não)
 	* repete
