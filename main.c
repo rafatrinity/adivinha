@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
 		ehum=toupper(ehum);
 		if (ehum=='S'){
 			cab();
-			printf("O NÚMENO NO QUAL VC PENSOU FOI %d\n",magica(par,impar,pv,n));
+			printf("O NÚMENO NO QUAL VOCE PENSOU FOI %d\n",magica(par,impar,pv,n));
 			sleep(1);
 			tot=0;
 			for (int i = 0; i <= n; i++)
