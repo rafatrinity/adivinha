@@ -16,5 +16,5 @@ jobs:
     - name: list
       run: ls
     - name: configure
-      run: ./configure.sh
+      run: sudo ./configure.sh
 
