@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  adivinha:
+    image: adivinha
+    build:
+      context: .
+      dockerfile: ./Dockerfile
