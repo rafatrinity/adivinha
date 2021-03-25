@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: list
-      run: ls
-    - name: configure
-      run: sudo ./configure.sh
+    - name: run
+      run: docker run --rm -it  adivinha:latest
 
